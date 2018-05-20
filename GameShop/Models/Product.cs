@@ -15,7 +15,14 @@ namespace GameShop.Models
         [Required(ErrorMessage ="El campo {0} necesario")]
         [StringLength(30,ErrorMessage ="El campo {0} debe tener entre {2} y {1} caracteres",MinimumLength = 3)]
         public string Product_Name { get; set; }
+
+        [Display(Name = "Descripcion")]
+        [Required(ErrorMessage = "El campo {0} necesario")]
+        [StringLength(30, ErrorMessage = "El campo {0} debe tener entre {2} y {1} caracteres", MinimumLength = 3)]
         public string Product_Description { get; set; }
+
+        [Display(Name = "Cantidad")]
+        [Required(ErrorMessage = "El campo {0} necesario")]
         public int Product_Quantity { get; set; }
     }
 }
