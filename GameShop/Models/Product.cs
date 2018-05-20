@@ -24,5 +24,9 @@ namespace GameShop.Models
         [Display(Name = "Cantidad")]
         [Required(ErrorMessage = "El campo {0} necesario")]
         public int Product_Quantity { get; set; }
+
+        public int Category_ID { get; set; }
+
+        public virtual Category Category { get; set; }
     }
 }
