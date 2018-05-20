@@ -29,5 +29,7 @@ namespace GameShop.Models
         public System.Data.Entity.DbSet<GameShop.Models.TypeID> TypeIDs { get; set; }
 
         public System.Data.Entity.DbSet<GameShop.Models.Client> Clients { get; set; }
+
+        public System.Data.Entity.DbSet<GameShop.Models.Category> Categories { get; set; }
     }
 }
