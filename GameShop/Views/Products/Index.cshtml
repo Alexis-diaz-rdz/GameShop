@@ -20,6 +20,9 @@
         <th>
             @Html.DisplayNameFor(model => model.Product_Quantity)
         </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Category.Category_Name)
+        </th>
         <th></th>
     </tr>
 
@@ -35,9 +38,12 @@
             @Html.DisplayFor(modelItem => item.Product_Quantity)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Product_ID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Product_ID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Product_ID })
+            @Html.DisplayFor(modelItem => item.Category.Category_Name)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.Product_ID }) |
+            @Html.ActionLink("Details", "Details", new { id = item.Product_ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.Product_ID })
         </td>
     </tr>
 }

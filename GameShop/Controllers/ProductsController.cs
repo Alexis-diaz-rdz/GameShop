@@ -38,6 +38,7 @@ namespace GameShop.Controllers
         // GET: Products/Create
         public ActionResult Create()
         {
+            ViewBag.Category_ID = new SelectList(db.Categories, "Category_ID", "Category_Name");
             return View();
         }
 
@@ -46,7 +47,7 @@ namespace GameShop.Controllers
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Product_ID,Product_Name,Product_Description,Product_Quantity")] Product product)
+        public ActionResult Create([Bind(Include = "Product_ID,Product_Name,Product_Description,Product_Quantity,Category_ID")] Product product)
         {
             if (ModelState.IsValid)
             {
@@ -55,6 +56,7 @@ namespace GameShop.Controllers
                 return RedirectToAction("Index");
             }
 
+            ViewBag.Category_ID = new SelectList(db.Categories, "Category_ID", "Category_Name", product.Category_ID);
             return View(product);
         }
 
@@ -70,6 +72,8 @@ namespace GameShop.Controllers
             {
                 return HttpNotFound();
             }
+
+            ViewBag.Category_ID = new SelectList(db.Categories, "Category_ID", "Category_Name", product.Category_ID);
             return View(product);
         }
 
@@ -78,7 +82,7 @@ namespace GameShop.Controllers
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Product_ID,Product_Name,Product_Description,Product_Quantity")] Product product)
+        public ActionResult Edit([Bind(Include = "Product_ID,Product_Name,Product_Description,Product_Quantity,Category_ID")] Product product)
         {
             if (ModelState.IsValid)
             {
