@@ -38,7 +38,7 @@ namespace GameShop.Controllers
         // GET: Products/Create
         public ActionResult Create()
         {
-            ViewBag.Category_ID = new SelectList(db.Categories, "Category_ID", "Category_Name");
+            ViewBag.Category_ID = new SelectList(db.Categories.OrderBy( c => c.Category_Name), "Category_ID", "Category_Name");
             return View();
         }
 

@@ -28,5 +28,7 @@ namespace GameShop.Models
         public Nullable<int> Category_ID { get; set; }
 
         public virtual Category Category { get; set; }
+
+        public virtual ICollection<Inventory> Inventories { get; set; }
     }
 }

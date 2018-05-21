@@ -11,8 +11,10 @@ namespace GameShop.Models
     {
         [Key]
         public int Inventory_ID { get; set; }
-        public string Product_Name { get; set; }
-        [NotMapped]
-        public int Quantity_Producs { get; }
+        public int Product_ID { get; set; }
+        public int Invoice_ID { get; set; }
+        
+        public virtual Product Product { get; set; }
+        public virtual Invoice Invoice { get; set; }
     }
 }

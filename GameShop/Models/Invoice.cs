@@ -12,7 +12,9 @@ namespace GameShop.Models
         public int Invoice_ID { get; set; }
         public string Invoice_Name { get; set; }
         public string Invoice_Description { get; set; }
-        public int Product_ID { get; set; }
-        public int Inventory_ID { get; set; }
+        //public int Product_ID { get; set; }
+        //public int Inventory_ID { get; set; }
+
+        public virtual ICollection<Inventory> Inventories { get; set; }
     }
 }
