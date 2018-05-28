@@ -35,6 +35,14 @@
             @Html.DisplayFor(model => model.Product_Quantity)
         </dd>
 
+        <dt>
+            @Html.DisplayNameFor(model => model.Category.Category_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Category.Category_Name)
+        </dd>
+
     </dl>
 
     @using (Html.BeginForm()) {

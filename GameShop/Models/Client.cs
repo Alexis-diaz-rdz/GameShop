@@ -23,7 +23,7 @@ namespace GameShop.Models
         public string Client_Apellido { get; set; }
 
         [Display(Name = "Tipo de Documento")]
-        [Required(ErrorMessage = "Debes ingresar {0}")]
+        [Required(ErrorMessage = "Debes ingresar el campo {0}")]
         public int ID_Type { get; set; }
 
         [Display(Name = "Numero de Documento")]

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.Entity.ModelConfiguration.Conventions;
 using System.Linq;
 using System.Web;
 
@@ -19,10 +20,16 @@ namespace GameShop.Models
         {
         }
 
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
+        }
         public System.Data.Entity.DbSet<GameShop.Models.Product> Products { get; set; }
 
         public System.Data.Entity.DbSet<GameShop.Models.TypeID> TypeIDs { get; set; }
 
         public System.Data.Entity.DbSet<GameShop.Models.Client> Clients { get; set; }
+
+        public System.Data.Entity.DbSet<GameShop.Models.Category> Categories { get; set; }
     }
 }
